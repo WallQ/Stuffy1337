@@ -1,6 +1,6 @@
 # Stuffy1337
 
-This is ransomware built for professional aptitude test just for education purpose only.
+This is ransomware built for my professional aptitude test just for education purpose only.
 
 ## Technologies
 [<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++" width="64" height="64" />](https://cplusplus.com/)
