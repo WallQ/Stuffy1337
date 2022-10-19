@@ -9,4 +9,4 @@ This is ransomware built for my professional aptitude test just for education pu
 
 ## License
 
-[MIT](https://github.com/WallQ/Portfolio/blob/master/LICENSE)
+[MIT](https://github.com/WallQ/Stuffy1337/blob/master/LICENSE)
